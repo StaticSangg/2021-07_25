@@ -1,0 +1,63 @@
+<!doctype html>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    <div id="simple">
+      <table id="list">
+        <thead>
+          <tr>
+            <th>no</th>
+            <th>name</th>
+            <th>tel</th>
+            <th>address</th>
+          </tr>
+        </thead>
+
+        <tbody id="contacts">
+          <template v-for="(contact, index) in contacts">
+          <tr>
+            <td>{{index+1}}</td>
+            <td>{{contact.name}}</td>
+            <td>{{contact.tel}}</td>
+            <td>{{contact.address}}</td>
+          </tr>
+          <tr class="divider" v-if="index%5 === 4">
+              <td colspan="4"></td>
+          </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      var model={
+        "pageno":1,
+        "pagesize":10,
+        "totalCount":100,
+        "contacts":[
+          {"no":100,"name":"설현10","tel":"010-1324-5678","address":"서울"},
+          {"no":99,"name":"설현9","tel":"010-1234-5678","address":"충남"},
+          {"no":98,"name":"설현8","tel":"010-1254-5678","address":"제주"},
+          {"no":97,"name":"설현7","tel":"010-1274-5678","address":"경기"},
+          {"no":96,"name":"설현6","tel":"010-1204-5678","address":"강원"},
+          {"no":95,"name":"설현5","tel":"010-1214-5678","address":"경주"},
+          {"no":94,"name":"설현4","tel":"010-1230-5678","address":"부산"},
+          {"no":93,"name":"설현3","tel":"010-1239-5678","address":"서울"},
+          {"no":92,"name":"설현2","tel":"010-1231-5678","address":"대구"},
+          {"no":91,"name":"설현1","tel":"010-2234-5678","address":"서울"},
+        ]
+      };
+      var simple = new Vue({
+        el:"#simple",
+        data:model,
+      })
+    </script>
+  </body>
+</html>

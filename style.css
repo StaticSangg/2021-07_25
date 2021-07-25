@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#list {
+  width: 600px;
+  border: 1px solid black;
+  border-collapse:collapse;
+}
+
+#list td, #list th {
+  border: 1px solid black;
+  text-align: center;
+}
+
+#list>thead>tr {
+  color: yellow;
+  background: purple;
+}
+
+.divider {
+  height: 4px;
+  background-color: gray;
+}
